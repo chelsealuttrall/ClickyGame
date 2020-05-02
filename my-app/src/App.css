@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.objective {
+  padding: 10px 100px;
+  font-family: serif;
+  text-align: center;
+}

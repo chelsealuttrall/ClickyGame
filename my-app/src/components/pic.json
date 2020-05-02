@@ -1,0 +1,47 @@
+[
+{
+    "id": 1,
+    "image": "./img/Blot1.jpg",
+    "clicked": false
+},
+{
+    "id": 2,
+    "image": "./img/Blot2.jpg",
+    "clicked": false
+},
+{
+    "id": 3,
+    "image": "./img/Blot3.jpg",
+    "clicked": false
+},
+{
+    "id": 4,
+    "image": "./img/Blot4.jpg",
+    "clicked": false
+},
+{
+    "id": 5,
+    "image": "./img/Blot5.jpg",
+    "clicked": false
+},
+{
+    "id": 6,
+    "image": "./img/Blot6.jpg",
+    "clicked": false
+},
+{
+    "id": 7,
+    "image": "./img/Blot7.jpg",
+    "clicked": false
+},
+{
+    "id": 8,
+    "image": "./img/Blot8.jpg",
+    "clicked": false
+},
+{
+    "id": 9,
+    "image": "./img/Blot9.jpg",
+    "clicked": false
+}
+]

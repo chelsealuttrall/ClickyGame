@@ -1,0 +1,19 @@
+.flexy {
+  display: flex;
+  justify-content: center;
+  margin: 15px 45px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px rgb(75, 55, 55);
+  border: 3px solid white;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  padding: 10px;
+  font-family: fantasy;
+}
+
+.padding {
+    padding: 10px;
+}
