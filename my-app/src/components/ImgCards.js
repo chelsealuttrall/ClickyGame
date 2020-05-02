@@ -10,121 +10,85 @@ import Blot6 from "./img/Blot6.jpg";
 import Blot7 from "./img/Blot7.jpg";
 import Blot8 from "./img/Blot8.jpg";
 import Blot9 from "./img/Blot9.jpg";
-// import Blot19 from "./img/Blot19.jpg";
+//import Blot19 from "./img/Blot19.jpg";
 import "./ImgCards.css";
-import pic from "./pic.json";
+//import Randomizer from "./Randomizer";
+
+let picArray = [
+  {
+    id: 1,
+    image: { Blot1 },
+    clicked: false,
+  },
+  {
+    id: 2,
+    image: { Blot2 },
+    clicked: false,
+  },
+  {
+    id: 3,
+    image: { Blot3 },
+    clicked: false,
+  },
+  {
+    id: 4,
+    image: { Blot4 },
+    clicked: false,
+  },
+  {
+    id: 5,
+    image: { Blot5 },
+    clicked: false,
+  },
+  {
+    id: 6,
+    image: { Blot6 },
+    clicked: false,
+  },
+  {
+    id: 7,
+    image: { Blot7 },
+    clicked: false,
+  },
+  {
+    id: 8,
+    image: { Blot8 },
+    clicked: false,
+  },
+  {
+    id: 9,
+    image: { Blot9 },
+    clicked: false,
+  },
+];
+
+
 
 class ImgCards extends React.Component {
   handleClick(event) {
     event.preventDefault();
     console.log("clicked", event.target.id, event.target.clicked);
-
   }
+
+  componentDidMount() {
+    let mappingCards =  picArray.map((picArray) => 
+    <Image
+    index="1"
+    src={picArray.image}
+    className="img"
+    id={picArray.id}
+    clickHandled={picArray.clicked}
+    onClick={handleClick()}
+  />)
+  };
+
   render() {
     return (
       <Container className="cards">
         <Col xs={6} md={4}>
           <Card className="cards">
             <Card.Body>
-              <Image
-                src={pic.image || Blot1}
-                className="img"
-                id="1" //{pic.id}
-                clickHandled= {pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot2}
-                className="img"
-                id="2" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot3}
-                className="img"
-                id="3" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={6} md={4}>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot4}
-                className="img"
-                id="4" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot5}
-                className="img"
-                id="5" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot6}
-                className="img"
-                id="6" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={6} md={4}>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot7}
-                className="img"
-                id="7" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot8}
-                className="img"
-                id="8" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
-            </Card.Body>
-          </Card>
-          <Card className="cards">
-            <Card.Body>
-              <Image
-                src={pic.image || Blot9}
-                className="img"
-                id="9" //{pic.id}
-                clicked={pic.clicked}
-                onClick={this.handleClick}
-              />
+              {/* >>>>card goes here<<< */}
             </Card.Body>
           </Card>
         </Col>

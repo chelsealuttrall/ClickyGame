@@ -11,13 +11,17 @@ import React from "react";
 // import cardObjectsJSON from "./cardObjects.json";
 
 class Randomizer extends React.Component {
-state = {
-    id: "",
-    image: "",
-    clicked: false
-   }
 
+    
 
+    render() {
+    
+    
+
+        return (
+            console.log("picArray")
+        )
+    }
 ;
 }
 
