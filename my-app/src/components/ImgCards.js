@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card, Col } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Blot1 from "./img/Blot1.jpg";
 import Blot2 from "./img/Blot2.jpg";
@@ -17,81 +17,80 @@ import "./ImgCards.css";
 let picArray = [
   {
     id: 1,
-    image: { Blot1 },
+    image: Blot1,
     clicked: false,
   },
   {
     id: 2,
-    image: { Blot2 },
+    image: Blot2,
     clicked: false,
   },
   {
     id: 3,
-    image: { Blot3 },
+    image: Blot3,
     clicked: false,
   },
   {
     id: 4,
-    image: { Blot4 },
+    image: Blot4,
     clicked: false,
   },
   {
     id: 5,
-    image: { Blot5 },
+    image: Blot5,
     clicked: false,
   },
   {
     id: 6,
-    image: { Blot6 },
+    image: Blot6,
     clicked: false,
   },
   {
     id: 7,
-    image: { Blot7 },
+    image: Blot7,
     clicked: false,
   },
   {
     id: 8,
-    image: { Blot8 },
+    image: Blot8,
     clicked: false,
   },
   {
     id: 9,
-    image: { Blot9 },
+    image: Blot9,
     clicked: false,
   },
 ];
-
-
+// var shuffle = require("shuffle-array");
+// let clickedArray =[];
+// let currentScore = 0;
+// let shuffling = shuffle(picArray);
 
 class ImgCards extends React.Component {
-  handleClick(event) {
+  handleClick = (event) => {
     event.preventDefault();
-    console.log("clicked", event.target.id, event.target.clicked);
-  }
-
-  componentDidMount() {
-    let mappingCards =  picArray.map((picArray) => 
-    <Image
-    index="1"
-    src={picArray.image}
-    className="img"
-    id={picArray.id}
-    clickHandled={picArray.clicked}
-    onClick={handleClick()}
-  />)
+    console.log("clicked", event.target.id);
   };
+  componentDidMount() {}
 
   render() {
     return (
-      <Container className="cards">
-        <Col xs={6} md={4}>
-          <Card className="cards">
+      <Container className="cards" >
+        {picArray.map((picArray) => (
+          <Card className="card">
             <Card.Body>
-              {/* >>>>card goes here<<< */}
+              <Image
+                index=""
+                src={picArray.image}
+                className="img"
+                id={picArray.id}
+                onClick={this.handleClick}
+                // count={currentScore}
+                clickHandled={}
+              />
             </Card.Body>
           </Card>
-        </Col>
+        ))}
       </Container>
     );
   }
