@@ -10,13 +10,12 @@ import Scoreboard from '../src/components/Scoreboard';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state={
       score: 0,
-      topscore: 0
-    }
+      topscore: 0,
+          }
 
+  render() {
   return (
     <div>
       <NavBar/>

@@ -16,7 +16,7 @@ function Scoreboard(props) {
       <hr></hr>
       <Col className="column">
         <h1 className="padding">Top Score:</h1>
-        <h1 className="padding">{props.topScore}</h1>
+        <h1 className="padding">{props.topscore}</h1>
       </Col>
     </Container>
   );

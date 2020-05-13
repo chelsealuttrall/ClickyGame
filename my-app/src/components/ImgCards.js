@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card } from "react-bootstrap";
+import { Container, Card} from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Blot1 from "./img/Blot1.jpg";
 import Blot2 from "./img/Blot2.jpg";
@@ -12,6 +12,7 @@ import Blot8 from "./img/Blot8.jpg";
 import Blot9 from "./img/Blot9.jpg";
 //import Blot19 from "./img/Blot19.jpg";
 import "./ImgCards.css";
+var shuffle = require("shuffle-array");
 //import Randomizer from "./Randomizer";
 
 let picArray = [
@@ -61,22 +62,33 @@ let picArray = [
     clicked: false,
   },
 ];
-// var shuffle = require("shuffle-array");
-// let clickedArray =[];
-// let currentScore = 0;
-// let shuffling = shuffle(picArray);
+
+let shuffledPicArray = () => shuffle(picArray);
+
 
 class ImgCards extends React.Component {
+  state = {
+    clickedArray: [],
+    value: 0,
+  };
+
+  componentDidMount() {
+    shuffledPicArray();
+    // return dealer();
+  }
+
   handleClick = (event) => {
     event.preventDefault();
     console.log("clicked", event.target.id);
+    this.state.clickedArray.push(event.target.id);
+    console.log(this.state.clickedArray);
+    // return dealer();
   };
-  componentDidMount() {}
 
   render() {
-    return (
-      <Container className="cards" >
-        {picArray.map((picArray) => (
+   let dealer = () => {
+      return  <Container className="cards">
+        {shuffledPicArray().map((picArray) => (
           <Card className="card">
             <Card.Body>
               <Image
@@ -84,14 +96,20 @@ class ImgCards extends React.Component {
                 src={picArray.image}
                 className="img"
                 id={picArray.id}
-                onClick={this.handleClick}
+                // onClick={this.handleClick}
+                onClick={(event)=>this.handleClick(event)}
+                // value="+"
                 // count={currentScore}
-                clickHandled={}
               />
             </Card.Body>
           </Card>
         ))}
       </Container>
+    };
+    
+    
+    return (
+      dealer()
     );
   }
 }
