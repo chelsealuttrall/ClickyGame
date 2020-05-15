@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Card} from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Blot1 from "./img/Blot1.jpg";
 import Blot2 from "./img/Blot2.jpg";
@@ -63,54 +63,64 @@ let picArray = [
   },
 ];
 
-let shuffledPicArray = () => shuffle(picArray);
-
-
 class ImgCards extends React.Component {
   state = {
     clickedArray: [],
     value: 0,
+    shuffled: shuffle(picArray),
   };
 
-  componentDidMount() {
-    shuffledPicArray();
-    // return dealer();
-  }
+ addClicked = ()=>{(this.state.clickedArray.concat(event.target.id))}
+  // componentDidMount() {
+
+  //   // return dealer();
+  // }
 
   handleClick = (event) => {
     event.preventDefault();
     console.log("clicked", event.target.id);
-    this.state.clickedArray.push(event.target.id);
-    console.log(this.state.clickedArray);
-    // return dealer();
+    this.setState({
+      clickedArray: 
+      // clickedArrray: this.state.clickedArray.concat(event.target.id),
+      // shuffled: shuffle(this.state.shuffled),
+    });
+    if (this.state.clickedArray.indexOf(event.target.id) === -1) {
+      console.log("logging the if statement in 86", this.state.clickedArray);
+      // this.setState({
+      //   value: 0,
+      ;
+    } else { console.log("logging the else in 90")
+      // this.setState({
+      //   value: +1,
+      ;
+    }
   };
 
   render() {
-   let dealer = () => {
-      return  <Container className="cards">
-        {shuffledPicArray().map((picArray) => (
-          <Card className="card">
-            <Card.Body>
-              <Image
-                index=""
-                src={picArray.image}
-                className="img"
-                id={picArray.id}
-                // onClick={this.handleClick}
-                onClick={(event)=>this.handleClick(event)}
-                // value="+"
-                // count={currentScore}
-              />
-            </Card.Body>
-          </Card>
-        ))}
-      </Container>
+    let dealer = () => {
+      return (
+        <Container className="cards">
+          {this.state.shuffled.map((picArray) => (
+            <Card className="card">
+              <Card.Body>
+                <Image
+                  index=""
+                  src={picArray.image}
+                  className="img"
+                  id={picArray.id}
+                  // onClick={this.handleClick}
+                  onClick={(event) => this.handleClick(event)}
+                  value= {this.state.value}
+                  // count={currentScore}
+                />
+              </Card.Body>
+            </Card>
+          ))}
+        </Container>
+      );
     };
-    
-    
-    return (
-      dealer()
-    );
+
+    return dealer();
   }
 }
 export default ImgCards;
