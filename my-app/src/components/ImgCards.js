@@ -70,35 +70,38 @@ class ImgCards extends React.Component {
     shuffled: shuffle(picArray),
   };
 
- addClicked = ()=>{(this.state.clickedArray.concat(event.target.id))}
-  // componentDidMount() {
-
-  //   // return dealer();
-  // }
+  // addingToClickedArray = (clickedID) => {
+  // this.setState({
+  //   clickedArrray: this.state.clickedArray.concat([clickedID]),
+  //   shuffled: shuffle(this.state.shuffled),
+  // })};
 
   handleClick = (event) => {
     event.preventDefault();
-    console.log("clicked", event.target.id);
-    this.setState({
-      clickedArray: 
-      // clickedArrray: this.state.clickedArray.concat(event.target.id),
-      // shuffled: shuffle(this.state.shuffled),
-    });
-    if (this.state.clickedArray.indexOf(event.target.id) === -1) {
-      console.log("logging the if statement in 86", this.state.clickedArray);
-      // this.setState({
-      //   value: 0,
-      ;
-    } else { console.log("logging the else in 90")
-      // this.setState({
-      //   value: +1,
-      ;
-    }
+    let clickedID = event.target.id;
+    console.log("clicked", clickedID);
+    // this.addingToClickedArray(clickedID);
+    console.log("new state", this.state)
+     if (!this.state.clickedArray.includes(event.target.id)) {
+       console.log("unique click", this.state.clickedArray);
+       this.setState({
+        clickedArray: this.state.clickedArray.concat([clickedID]),
+       value: +1,
+       shuffled: shuffle(picArray),
+   
+    })} else { 
+      console.log("uh-oh! You already clicked that one!");
+      this.setState({
+        clickedArray: [],
+        value: 0,
+        shuffled: shuffle(picArray),
+    })}
   };
 
   render() {
-    let dealer = () => {
+   
       return (
+        <>
         <Container className="cards">
           {this.state.shuffled.map((picArray) => (
             <Card className="card">
@@ -117,10 +120,9 @@ class ImgCards extends React.Component {
             </Card>
           ))}
         </Container>
+        </>
       );
     };
-
-    return dealer();
-  }
+  
 }
 export default ImgCards;
