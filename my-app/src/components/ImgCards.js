@@ -10,10 +10,12 @@ import Blot6 from "./img/Blot6.jpg";
 import Blot7 from "./img/Blot7.jpg";
 import Blot8 from "./img/Blot8.jpg";
 import Blot9 from "./img/Blot9.jpg";
+import Scoreboard from "./Scoreboard.js";
 //import Blot19 from "./img/Blot19.jpg";
 import "./ImgCards.css";
 var shuffle = require("shuffle-array");
 //import Randomizer from "./Randomizer";
+
 
 let picArray = [
   {
@@ -86,7 +88,7 @@ class ImgCards extends React.Component {
        console.log("unique click", this.state.clickedArray);
        this.setState({
         clickedArray: this.state.clickedArray.concat([clickedID]),
-       value: +1,
+       value: this.state.value + 1,
        shuffled: shuffle(picArray),
    
     })} else { 
@@ -102,6 +104,8 @@ class ImgCards extends React.Component {
    
       return (
         <>
+        <Scoreboard></Scoreboard>
+        <br></br>
         <Container className="cards">
           {this.state.shuffled.map((picArray) => (
             <Card className="card">
