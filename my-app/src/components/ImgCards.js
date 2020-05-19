@@ -104,7 +104,7 @@ class ImgCards extends React.Component {
    
       return (
         <>
-        <Scoreboard></Scoreboard>
+        <Scoreboard value={this.state.value}></Scoreboard>
         <br></br>
         <Container className="cards">
           {this.state.shuffled.map((picArray) => (
