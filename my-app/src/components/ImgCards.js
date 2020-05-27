@@ -116,7 +116,8 @@ class ImgCards extends React.Component {
                   className="img"
                   id={picArray.id}
                   // onClick={this.handleClick}
-                  onClick={(event) => this.handleClick(event)}
+                  // onClick={(event) => this.handleClick(event)}
+                  onClick={() => {this.props.checkForDuplicate(picArray)}}
                   value= {this.state.value}
                   // count={currentScore}
                 />

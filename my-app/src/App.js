@@ -11,6 +11,24 @@ import ImgCards from "../src/components/ImgCards";
 
 class App extends Component {
   
+  state = {
+    score: 0,
+  topScore: 0,
+  cards: [],
+  selectedCards: []
+  }
+
+  // on componentDidMount
+  // call game setup
+
+  // gameSetup
+  // create the array of cards with random images and points
+
+  // checkForDuplicate(cardPo)
+  // if card is in selectedCards, you lose
+  // Add to selectedCards
+  //  if selectedCards.length == card.length , you win
+
   render() {
     return (
       <div>
